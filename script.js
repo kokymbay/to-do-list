@@ -29,21 +29,21 @@ addTodo.addEventListener('click', function () {
     newTodo.value = '';
 
     todoList.forEach((e, i) => {
-        let todoItem = document.getElementById('todo__item_'+i)
-        let checkBtn = document.getElementById('check__'+i)
+        let todoItem = document.getElementById('todo__item_' + i)
+        let checkBtn = document.getElementById('check__' + i)
         checkBtn.addEventListener('click', () => {
             checkBtn.classList.toggle('active')
             todoItem.classList.toggle('todo__active')
         })
 
-       let del = document.getElementById('del__'+i)
-       let todoItems = document.getElementById('todo__items_'+i)
-       del.addEventListener('click', ()=>{
+        let del = document.getElementById('del__' + i)
+        let todoItems = document.getElementById('todo__items_' + i)
+        del.addEventListener('click', () => {
+            todoList.splice(i)
             todoItems.remove();
-       })
+
+        })
     })
-
-
 
 });
 
